@@ -32,7 +32,7 @@ body {
   font-family: "LexendDeca";
   font-weight: 400;
   font-size: 0.9rem;
-  color: hsla(0, 0%, 100%, 0.6);
+  color: hsla(0, 0%, 100%, 0.75);
   margin: 0;
   padding: 40px 0;
 }
@@ -104,12 +104,31 @@ textarea:not([rows]) {
     
   /* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
 @media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-    }
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }  
+  .column {
+    width: 95%;
+    padding: 30px;
+    border-radius: 0; /* Reset all first */
   }
+  .column#column-sedan {
+    border-radius: 8px 8px 0 0;
+  }
+  .column#column-luxury {
+    border-radius: 0 0 8px 8px;
+  }
+  .column button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .column h2 {
+    margin: 20px 0;
+  }
+}
 
-  @font-face{ 
+@font-face{ 
     src: url("assets/fonts/LexendDeca/LexendDeca-VariableFont_wght.ttf");
     font-family: LexendDeca;
 }
@@ -121,10 +140,14 @@ textarea:not([rows]) {
 
 button {
     margin-top: 100px;
+    padding: 15px 30px 15px 30px;
+    border-radius: 25px;
+    border: none;
 }
 
 #column-sedan {
     background-color: hsl(31, 77%, 52%);
+    border-radius: 8px 0 0 8px;
 }
 
 #column-suv {
@@ -132,9 +155,43 @@ button {
 }
 
 #column-luxury {
-    background-color: hsl(179, 100%, 13%);
+  background-color: hsl(179, 100%, 13%);
+  border-radius: 0 8px 8px 0;
+}
+
+#button-sedan {
+  color: hsl(31, 77%, 52%);
+}
+
+#button-sedan:hover {
+  color: hsl(0, 0%, 95%);
+  background-color: hsl(31, 77%, 52%);
+  border: 2px solid hsl(0, 0%, 95%);
+  cursor: pointer;
+}
+
+#button-suv {
+  color: hsl(184, 100%, 22%);
+}
+
+#button-suv:hover {
+  color: hsl(0, 0%, 95%);
+  background-color: hsl(184, 100%, 22%);
+  border: 2px solid hsl(0, 0%, 95%);
+  cursor: pointer;
+}
+
+#button-luxury {
+  color: hsl(179, 100%, 13%);
+}
+
+#button-luxury:hover {
+  color: hsl(0, 0%, 95%);
+  background-color: hsl(179, 100%, 13%);
+  border: 2px solid hsl(0, 0%, 95%);
+  cursor: pointer;
 }
 
 
-  .attribution { font-size: 11px; text-align: center; color: black}
-  .attribution a { color: hsl(228, 45%, 44%); }
+.attribution { font-size: 11px; text-align: center; color: black}
+.attribution a { color: hsl(228, 45%, 44%); }
