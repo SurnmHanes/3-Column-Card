@@ -1,4 +1,4 @@
-The challenge wa to build out a 3-column preview card component and get it looking as close to the supplied design as possible.
+The challenge was to build out a 3-column preview card component and get it looking as close to the supplied design as possible.
 
 The users should be able to:
 
